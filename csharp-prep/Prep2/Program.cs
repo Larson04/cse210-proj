@@ -8,43 +8,43 @@ class Program
         Console.WriteLine("Hello Prep2 World!");
 
         Console.Write("What is your grade percentage? ");
-        int grade = int.Parse(Console.ReadLine());
+        int rlgrade = int.Parse(Console.ReadLine());
 
-        string letter = "";
+        string rlletter = "";
 
-        if (grade >= 90)
+        if (rlgrade >= 90)
         {
             //Console.WriteLine("Your grade is an A.");
-            letter = "A";
+            rlletter = "A";
         }
-        else if (grade >= 80)
+        else if (rlgrade >= 80)
         {
             // Console.WriteLine("Your grade is a B.");
-            letter = "B";
+            rlletter = "B";
         }
-        else if (grade >= 70)
+        else if (rlgrade >= 70)
         {
             // Console.WriteLine("Your grade is a C.");
-            letter = "C";
+            rlletter = "C";
         }
-        else if (grade >= 60)
+        else if (rlgrade >= 60)
         {
             // Console.WriteLine("Your grade is a D.");
-            letter = "D";
+            rlletter = "D";
         }
-        else if (grade < 60)
+        else if (rlgrade < 60)
         {
             // Console.WriteLine("Your grade is an F.");
-            letter = "F";
+            rlletter = "F";
         }
         else 
         {
             Console.WriteLine("Invalid grade.");
         }
 
-        Console.WriteLine($"Your grade is {letter}.");
+        Console.WriteLine($"Your grade is {rlletter}.");
 
-        if (grade >= 70) 
+        if (rlgrade >= 70) 
         {
             Console.WriteLine("Congratulations, you passed!");
         }
