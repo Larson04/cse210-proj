@@ -25,10 +25,43 @@ Console.WriteLine('')
 && = and
 || = or
 !  = not
++=
+-=
+*=
+/=
+%=
+x ++ = add one to x
+x -- = subtract one from x
 
 //control structures
-// if (test) {block of code}
+// if (test) 
+// {
+    // block of code
+// }
 // else if
 // else
-    
-}
+
+// loops
+// while (condition)
+// {
+    // Console.WriteLine("Howdy World");
+    // x ++;
+// }
+
+// foreach (x in range)
+// {
+    // Console.WriteLine(x);
+// }
+
+// for (initializer; logic test; modifier)
+// for (int x = 0; x < 9; x ++)
+// {
+    // Console.WriteLine("Howdy World");
+// }
+
+// do
+// {
+    // Console.WriteLine("Howdy World");
+    // x ++;
+// } while (condition)
+

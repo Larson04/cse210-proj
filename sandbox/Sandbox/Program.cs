@@ -1,9 +1,18 @@
-using System;
+// using System;
 
-class Program
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         for (int x = 0; x < 9; x
+//         {
+//             Console.WriteLine("Howdy Sandbox World!");
+//         }
+//     }
+// }
+
+for (int y = 9; y>3; y--)
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello Sandbox World!");
-    }
+    Console.WriteLine("Howdy");
 }
+
