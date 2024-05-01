@@ -4,6 +4,18 @@
     "configurations": [
 
         {
+            "name": "Nemo",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-Nemo",
+            "program": "${workspaceFolder}/sandbox/Nemo/bin/Debug/net8.0/Nemo.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/Nemo",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+        {
             "name": "Sandbox Project",
             "type": "coreclr",
             "request": "launch",

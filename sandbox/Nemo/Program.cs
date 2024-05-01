@@ -3,7 +3,7 @@ Console.WriteLine("Hello, World!");
 
 // to get input
 string x;
-Console.Write('prompt');
+Console.Write("prompt");
 x = Console.ReadLine();
 
 // integers, float, Boolean variables
@@ -12,26 +12,26 @@ double f;
 bool b;
 
 // output/display
-Console.WriteLine('')
+Console.WriteLine("Hello, World!");
 
 //Opereators
-+
--
-*
-/
-%
+// +
+// -
+// *
+// /
+// %
 
 //Logic
-&& = and
-|| = or
-!  = not
-+=
--=
-*=
-/=
-%=
-x ++ = add one to x
-x -- = subtract one from x
+// && = and
+// || = or
+// !  = not
+// +=
+// -=
+// *=
+// /=
+// %=
+// x ++ = add one to x
+// x -- = subtract one from x
 
 //control structures
 // if (test) 
@@ -65,3 +65,18 @@ x -- = subtract one from x
     // x ++;
 // } while (condition)
 
+// Lists
+// List<dataType> myList = new List<dataType>();
+// or
+List<dataType> myList = new();
+myList.Add(data);
+
+Random rG = new();
+// Or
+Random randomGenerator = new Random();
+
+// defining functions
+static typeOfDataReturned functionName(parametersVariableType)
+(
+    // block of code
+)
