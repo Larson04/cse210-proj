@@ -68,7 +68,7 @@ Console.WriteLine("Hello, World!");
 // Lists
 // List<dataType> myList = new List<dataType>();
 // or
-List<dataType> myList = new();
+List<dataType> myList = new List<dataType>();
 myList.Add(data);
 
 Random rG = new();
