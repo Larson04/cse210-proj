@@ -80,3 +80,6 @@ static typeOfDataReturned functionName(parametersVariableType)
 (
     // block of code
 )
+
+
+// An object is an instance of a class
