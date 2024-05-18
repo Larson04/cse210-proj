@@ -7,12 +7,14 @@ public class JournalEntry{
         
         JournalEntry workingJournal = new JournalEntry();
 
-        _date = DateTime.Now.ToString();
-        _prompt = Prompt.Display();
+        workingJournal._date = DateTime.Now.ToString();
+        workingJournal._prompt = Prompt.Display();
 
-        Console.WriteLine($"{_date} - Prompt: {_prompt}");
+        Console.WriteLine($"{workingJournal._date} - Prompt: {workingJournal._prompt}");
 
-        _response = Console.ReadLine();
+        workingJournal._response = Console.ReadLine();
+
+        Console.WriteLine("|");
 
         return workingJournal;
     }

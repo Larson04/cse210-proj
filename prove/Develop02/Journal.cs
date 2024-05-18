@@ -7,7 +7,10 @@ public class Journal{
     public void DisplayJournal(){
         foreach (JournalEntry entry in _entries){
 
-            Console.WriteLine(_entries);
+            Console.WriteLine(entry._date);
+            Console.WriteLine(entry._prompt);
+            Console.WriteLine(entry._response);
         }
     }
+
 }
