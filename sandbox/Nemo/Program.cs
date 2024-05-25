@@ -83,3 +83,10 @@ static typeOfDataReturned functionName(parametersVariableType)
 
 
 // An object is an instance of a class
+
+
+// key words
+private
+    // keeps data away from other people's software
+public
+    // can be accessed by other classes
