@@ -16,7 +16,7 @@ public class Reference
 
     public void DisplayReference()
     {
-        if (_endVerse == 0)
+        if (_endVerse != 0)
         {
             string displayReference = $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
             Console.WriteLine(displayReference);

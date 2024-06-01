@@ -20,6 +20,7 @@ public class Words
     
     public string HideWord()
     {
+
         if (_isHidden == false)
         {
             string word = new string('_', _word.Length);
@@ -30,4 +31,19 @@ public class Words
         }
     }
 
+    public int CheckIfHidden()
+    {
+        if (_word == string.Concat(Enumerable.Repeat('_', _word.Length)))
+        {
+            _isHidden = true;
+            return 1;
+        }
+        
+        else
+        {
+            _isHidden = false;
+            return 0;
+        }
+
+    }
 }

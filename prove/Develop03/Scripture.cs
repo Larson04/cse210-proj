@@ -32,13 +32,10 @@ public class Scripture
         _randWord = word;
         Words workingWord = new Words();
 
-        int count = 0;
-        while (count < 3)
-        {
-            if (_randWord == "_")
+        
+            if (_randWord == string.Concat(Enumerable.Repeat('_', _randWord.Length)))
             {
                 _words[_randIndex] = _randWord;
-                count ++;
 
             }
             else
@@ -47,7 +44,7 @@ public class Scripture
                 _randWord = workingWord.HideWord();
                 _words[_randIndex] = _randWord;
             }
-        }
+        
         
         
     }
