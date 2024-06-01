@@ -11,21 +11,20 @@ public class Reference
         _chapter = chapter;
         _startVerse = startVerse;
         _endVerse = endVerse;
-        string displayReference = "";
+              
+    }
+
+    public void DisplayReference()
+    {
         if (_endVerse == 0)
         {
-            displayReference = $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
+            string displayReference = $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
+            Console.WriteLine(displayReference);
         }
         else 
         {
-            displayReference = $"{_book} {_chapter}:{_startVerse}";
+            string displayReference = $"{_book} {_chapter}:{_startVerse}";
+            Console.WriteLine(displayReference);
         }
-
-        
-    }
-
-    public void DisplayReference(string displayReference)
-    {
-        Console.WriteLine(displayReference);
     }
 }

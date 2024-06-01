@@ -1,6 +1,6 @@
 public class Scripture
 {
-    public string _verse;
+    private string _verse;
     public List<string> _words = new List<string>();
     public int _randIndex;
     public string _randWord;
@@ -29,11 +29,27 @@ public class Scripture
 
     public void SetWord(string word)
     {
-
         _randWord = word;
-        _words[_randIndex] = _randWord;
-        
+        Words workingWord = new Words();
 
+        int count = 0;
+        while (count < 3)
+        {
+            if (_randWord == "_")
+            {
+                _words[_randIndex] = _randWord;
+                count ++;
+
+            }
+            else
+            {
+                workingWord.SetWord(_randWord);
+                _randWord = workingWord.HideWord();
+                _words[_randIndex] = _randWord;
+            }
+        }
+        
+        
     }
 
 
