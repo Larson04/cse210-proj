@@ -1,0 +1,70 @@
+using System.Reflection;
+using System.Runtime.InteropServices;
+
+public class Activity
+{
+    protected string _startMessage;
+    protected string _endMessage;
+    protected int _duration;
+
+    public Activity(string startMessage, string endMessage, int duration)
+    {
+        startMessage = _startMessage;
+        endMessage = _endMessage;
+        duration = _duration;
+    }
+
+    public void DisplayStartMessage(string _startMessage)
+    {
+        Console.WriteLine(_startMessage);
+    }
+
+    public void DisplayEndMessage(string _endMessage)
+    {
+        Console.WriteLine(_endMessage);
+    }
+
+    public void Animation1(int wait)
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(wait);
+        
+        List<string> animations = new List<string> { "Ooooooo", "oOooooo", "ooOoooo", "oooOooo", "ooooOoo", "oooooOo", "ooooooO", "ooooooo" };
+
+        while (DateTime.Now < futureTime)
+        {
+            for (int i = 0; i < animations.Count; i++)
+            {
+                Console.Clear();
+                Console.Write($"{animations[i]}");
+                Thread.Sleep(500);
+                Console.Clear();
+            }
+        }
+    }
+
+    public void Animation2(int wait)
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(wait);
+
+        Console.Write("Ooooooo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("oOooooo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("ooOoooo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("oooOooo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("ooooOoo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("oooooOo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("ooooooO\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("ooooooo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        
+
+    }
+}
