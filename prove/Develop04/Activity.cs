@@ -5,7 +5,7 @@ public class Activity
 {
     protected string _startMessage;
     protected string _endMessage;
-    protected int _duration;
+    public int _duration;
 
     public Activity(string startMessage, string endMessage, int duration)
     {
@@ -29,7 +29,7 @@ public class Activity
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(wait);
         
-        List<string> animations = new List<string> { "Ooooooo", "oOooooo", "ooOoooo", "oooOooo", "ooooOoo", "oooooOo", "ooooooO", "ooooooo" };
+        List<string> animations = new List<string> { "Ooooooo", "oOooooo", "ooOoooo", "oooOooo", "ooooOoo", "oooooOo", "ooooooO", "ooooooo", "ooooooO", "oooooOo", "ooooOoo", "oooOooo", "ooOoooo", "oOooooo", "Ooooooo", "ooooooo" };
 
         while (DateTime.Now < futureTime)
         {
@@ -66,5 +66,25 @@ public class Activity
         Thread.Sleep(500);
         
 
+    }
+
+    public void Animation3(int wait)
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(wait);
+        Console.Write("ooooooO\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("oooooOo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("ooooOoo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("oooOooo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("ooOoooo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("oOooooo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
+        Console.Write("Ooooooo\b\b\b\b\b\b\b");
+        Thread.Sleep(500);
     }
 }
