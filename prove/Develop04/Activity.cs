@@ -5,13 +5,12 @@ public class Activity
 {
     protected string _startMessage;
     protected string _endMessage;
-    public int _duration;
+    public static int _duration;
 
-    public Activity(string startMessage, string endMessage, int duration)
+    public Activity(string startMessage, string endMessage)
     {
         startMessage = _startMessage;
         endMessage = _endMessage;
-        duration = _duration;
     }
 
     public void DisplayStartMessage(string _startMessage)
@@ -37,7 +36,7 @@ public class Activity
             {
                 Console.Clear();
                 Console.Write($"{animations[i]}");
-                Thread.Sleep(500);
+                Thread.Sleep(250);
                 Console.Clear();
             }
         }
@@ -86,5 +85,13 @@ public class Activity
         Thread.Sleep(500);
         Console.Write("Ooooooo\b\b\b\b\b\b\b");
         Thread.Sleep(500);
+    }
+
+    public int GetDuration()
+    {
+        Console.Write("How long, in seconds, would you like for your session? ");
+        _duration = int.Parse(Console.ReadLine());
+
+        return _duration;
     }
 }

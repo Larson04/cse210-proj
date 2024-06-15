@@ -1,15 +1,14 @@
 public class Breath : Activity
 {
     public int _wait;
-    protected string _specialDescription;
+    protected static string _specialDescription = "This activity will help you relax by walking your through breathing in and out slowly. \nClear your mind and focus on your breathing.";
 
-    public Breath(string startMessage, string endMessage, int duration, int wait, string specialDescription) : base(startMessage, endMessage, duration)
+    public Breath(string startMessage, string endMessage, int duration, int wait) : base(startMessage, endMessage)
     {
         _wait = wait;
-        _specialDescription = specialDescription;
     }
 
-    public void BreathCount(int wait, int duration, string _endMessage)
+    public void BreathCount(int duration, string _endMessage)
     {
         Console.WriteLine($"{_specialDescription}");
         Animation2(5);
