@@ -15,6 +15,19 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
+
+        {
+            "name": "Omen",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-Omen",
+            "program": "${workspaceFolder}/sandbox/Omen/bin/Debug/net8.0/Omen.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/Omen",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
         {
             "name": "Louis",
             "type": "coreclr",
