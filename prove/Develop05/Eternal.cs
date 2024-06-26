@@ -22,14 +22,32 @@ class Eternal : Goal
             {
                 if (completed == "Yes")
                 {
-                    _isCompleted = true;
-                    Console.WriteLine("You have earned 5 points!");
-                    _points = 5;
-                    _date = DateTime.Now.ToString();
-                    _dateList.Add(_date);
-                    Console.WriteLine($"You have completed this goal {_dateList.Count} times!");
-                    _score += _points;
-                    
+                    foreach (string date in _dateList)
+                    {
+                        if (date == _date)
+                        {
+                            if (_isCompleted == true)
+                            {
+                                Console.WriteLine("You have already completed this goal today!");
+                                
+                            }
+                        }
+                        else
+                        {
+                            _isCompleted = true;
+                            Console.WriteLine("You have earned 5 points!");
+                            _points = 5;
+                            DateTime dateTime = DateTime.Now;
+                            _date = dateTime.ToString("MM/dd/yyyy");
+                            _dateList.Add(_date);
+                            Console.WriteLine($"You have completed this goal {_dateList.Count} times!");
+                            _score += _points;
+
+                            _goalList.Remove($"[ ] {_name} ({_description})");
+                            _goalList.Add($"[X] {_name} ({_description})");
+
+                        }
+                    }                    
                 }
                 else
                 {
