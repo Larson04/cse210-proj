@@ -5,9 +5,10 @@ abstract class Goal
     public int _points;
     public int _score;
     public bool _isCompleted;
+    public string _type;
     public static List<string> _goalList = new List<string> { };
 
-    public Goal(string name, string description, int points, bool isCompleted, List<string> goalList, int score)
+    public Goal(string name, string description, int points, bool isCompleted, List<string> goalList, int score, string type)
     {
         _name = name;
         _description = description;
@@ -15,6 +16,7 @@ abstract class Goal
         _isCompleted = isCompleted;
         _goalList = goalList;
         _score = score;
+        _type = type;
     }
 
     public void Display()

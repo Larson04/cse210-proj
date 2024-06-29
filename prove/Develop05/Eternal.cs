@@ -2,7 +2,7 @@ class Eternal : Goal
 {
     public string _date;
     public List<string> _dateList = new List<string> { };
-    public Eternal(string name, string description, int points, bool isCompleted, List<string> goalList, int score, string date, List<string> dateList) : base(name, description, points, isCompleted, goalList, score)
+    public Eternal(string name, string description, int points, bool isCompleted, List<string> goalList, int score, string date, List<string> dateList) : base(name, description, points, isCompleted, goalList, score, type)
     {
         _date = date;
         _dateList = dateList;
