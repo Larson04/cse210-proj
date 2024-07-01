@@ -18,24 +18,25 @@ class Program
 
             if (userChoice == "1")
             { // Eternal
-                Eternal eternalActivity = new eternal();
+                
             }
             else if (userChoice == "2")
-            { // list
-                Listing listingActivity = new Listing("Welcome to the Mindfulness App! Here are some activities to help you be more mindful.", "Great Job!",duration);
-
-                listingActivity.GetResponse(duration);
-                listingActivity.Count();                
+            { // Simple
+                                
             }
             else if (userChoice == "3")
-            { // reflect
-                Reflect reflectActivity = new Reflect("Welcome to the Mindfulness App! Here are some activities to help you be more mindful.", "Great Job!");
-
-                reflectActivity.DisplaySpecialDescription();
-                reflectActivity.DisplayPrompt(duration);
-                activity.DisplayEndMessage("Great Job!");                
+            { // check
+                                
             }
             else if (userChoice == "4")
+            {//view
+            
+            }
+            else if (userChoice == "5")
+            { // update
+
+            }
+            else if (userChoice == "6")
             { // quit
                 Console.WriteLine("Goodbye!");
             }

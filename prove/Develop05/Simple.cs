@@ -1,7 +1,7 @@
 class Simple : Goal
 {
 
-    public Simple(string name, string description, int points, bool isCompleted, List<string> goalList, int score) : base(name, description, points, isCompleted, goalList, score, type){}
+    public Simple(string name, string description, int points, bool isCompleted, List<string> goalList, int score) : base(name, description, points, isCompleted, goalList, score){}
 
 
     public override void Update()

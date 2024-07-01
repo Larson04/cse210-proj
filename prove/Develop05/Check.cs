@@ -3,7 +3,7 @@ class Check : Goal
     int _checkCount;
     int _bonus;
     int _count;
-    public Check(string name, string description, int points, bool isCompleted, List<string> goalList, int score, int bonus, int checkCount, int count) : base(name, description, points, isCompleted, goalList, score, type)
+    public Check(string name, string description, int points, bool isCompleted, List<string> goalList, int score, int bonus, int checkCount, int count) : base(name, description, points, isCompleted, goalList, score)
     {
         _bonus = bonus;
         _checkCount = checkCount;

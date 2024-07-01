@@ -2,7 +2,7 @@ using System.Reflection.Metadata.Ecma335;
 
 class SaveFile : Goal
 {
-    public SaveFile(string name, string description, int points, bool isCompleted, List<string> goalList, int score) : base(name, description, points, isCompleted, goalList, score, type) { }
+    public SaveFile(string name, string description, int points, bool isCompleted, List<string> goalList, int score) : base(name, description, points, isCompleted, goalList, score) { }
 
     public void Save(List<Goal> _goalList)
         {
@@ -12,7 +12,7 @@ class SaveFile : Goal
             {
                 foreach ( Goal goal in  _goalList)
                 {
-                    string line = goal._type + '|' + goal._name + '|' +  goal._description + '|' + goal._isCompleted;
+                    string line = goal._name + '|' +  goal._description + '|' + goal._isCompleted;
                     outputFile.WriteLine($"{line}");
 
                 }
