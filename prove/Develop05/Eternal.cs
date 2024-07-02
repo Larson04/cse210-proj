@@ -2,7 +2,7 @@ class Eternal : Goal
 {
     public string _date;
     public List<string> _dateList = new List<string> { };
-    public Eternal(string name, string description, int points, bool isCompleted, List<string> goalList, int score, string date, List<string> dateList) : base(name, description, points, isCompleted, goalList, score)
+    public Eternal(string name, string description, int points, bool isCompleted, string date, List<string> dateList) : base(name, description, points, isCompleted)
     {
         _date = date;
         _dateList = dateList;
@@ -41,7 +41,7 @@ class Eternal : Goal
                             _date = dateTime.ToString("MM/dd/yyyy");
                             _dateList.Add(_date);
                             Console.WriteLine($"You have completed this goal {_dateList.Count} times!");
-                            _score += _points;
+                            // _score += _points;
 
                             _goalList.Remove($"[ ] {_name} ({_description})");
                             _goalList.Add($"[X] {_name} ({_description})");
@@ -57,5 +57,10 @@ class Eternal : Goal
                 }
             }
         }
+    }
+
+    public override string ListSave()
+    {
+        return "Eternal: " + "|" + _name + "|" + _description + "|" + _isCompleted + "|" + _points + "|" + _date;
     }
 }

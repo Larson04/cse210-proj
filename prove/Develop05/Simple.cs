@@ -1,7 +1,9 @@
 class Simple : Goal
 {
 
-    public Simple(string name, string description, int points, bool isCompleted, List<string> goalList, int score) : base(name, description, points, isCompleted, goalList, score){}
+    public Simple(string name, string description, int points, bool isCompleted) : base(name, description, points, isCompleted){
+        
+    }
 
 
     public override void Update()
@@ -19,7 +21,7 @@ class Simple : Goal
                     _isCompleted = true;
                     Console.WriteLine("You have earned 5 points!");
                     _points = 5;
-                    _score += _points;
+                    // _score += _points;
 
                     _goalList.Remove($"[ ] {_name} ({_description})");
                     _goalList.Add($"[X] {_name} ({_description})");
@@ -34,5 +36,11 @@ class Simple : Goal
                 }
             }
         }
+    }
+
+    public override string ListSave()
+    {
+    
+        return "Simple: " + "|" + _name + "|" + _description + "|" + _isCompleted + "|" + _points;
     }
 }

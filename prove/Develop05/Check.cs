@@ -3,7 +3,7 @@ class Check : Goal
     int _checkCount;
     int _bonus;
     int _count;
-    public Check(string name, string description, int points, bool isCompleted, List<string> goalList, int score, int bonus, int checkCount, int count) : base(name, description, points, isCompleted, goalList, score)
+    public Check(string name, string description, int points, bool isCompleted, int bonus, int checkCount, int count) : base(name, description, points, isCompleted)
     {
         _bonus = bonus;
         _checkCount = checkCount;
@@ -27,7 +27,8 @@ class Check : Goal
                     {
                         if (_isCompleted == true)
                         {
-                            Console.WriteLine("You have completed this goal! Here is a bonus of ${_bonus} points! ");
+                            _bonus = _points * 2;
+                            Console.WriteLine("You have completed this goal! Here is a bonus of " + _bonus + " points! ");
 
                             
                         }
@@ -42,7 +43,7 @@ class Check : Goal
 
                         
                         Console.WriteLine($"You have completed this goal {_count} times!");
-                        _score += _points;
+                        // _score += _points;
 
                         _goalList.Remove($"[ ] {_name} ({_description})");
                         _goalList.Add($"[X] {_name} ({_description})");
@@ -58,4 +59,10 @@ class Check : Goal
             }
         }
     }   
+
+    public override string ListSave()
+    {
+
+        return "Check: " + "|" + _name + "|" + _description + "|" + _isCompleted + "|" + _points + "|" + _bonus + "|" + _checkCount + "|" + _count;
+    }
 }
