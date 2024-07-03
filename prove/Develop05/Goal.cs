@@ -6,7 +6,7 @@ abstract class Goal
     
     public bool _isCompleted;
     
-    public static List<string> _goalList = new List<string> { };
+    public static List<Goal> _goalList = new List<Goal> { };
 
     public Goal(string name, string description, int points, bool isCompleted)
     {
@@ -17,20 +17,7 @@ abstract class Goal
         
     }
 
-    public void Display()
-    {
-        foreach (string goal in _goalList)
-        {
-            if (_isCompleted == true)
-            {
-                Console.WriteLine($"[X] {_name} ({_description})");
-            }
-            else
-            {
-                Console.WriteLine($"[ ] {_name} ({_description})");
-            }
-        }
-    }
+    public abstract void Display();
 
     public abstract void Update();
 

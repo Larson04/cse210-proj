@@ -17,9 +17,9 @@ class Check : Goal
         Console.WriteLine("Have you completed this goal? (Yes or No)");
         string completed = Console.ReadLine();
 
-        foreach (string goal in _goalList)
+        foreach (Goal goal in _goalList)
         {
-            if (goal == name)
+            if (goal._name == name)
             {
                 if (completed == "Yes")
                 {
@@ -36,17 +36,13 @@ class Check : Goal
                     else
                     {
                         _isCompleted = true;
-                        Console.WriteLine("You have earned 5 points!");
-                        _points = 5;
+                        Console.WriteLine($"You have earned {_points} points!");
 
                         _count += 1;
 
                         
-                        Console.WriteLine($"You have completed this goal {_count} times!");
+                        Console.WriteLine($"You have completed this goal {_count}/{_checkCount} times!");
                         // _score += _points;
-
-                        _goalList.Remove($"[ ] {_name} ({_description})");
-                        _goalList.Add($"[X] {_name} ({_description})");
 
                     }
                 }                    
@@ -64,5 +60,17 @@ class Check : Goal
     {
 
         return "Check: " + "|" + _name + "|" + _description + "|" + _isCompleted + "|" + _points + "|" + _bonus + "|" + _checkCount + "|" + _count;
+    }
+
+    public override void Display()
+    {
+        if (_isCompleted == true)
+        {
+            Console.WriteLine($"Eternal: [X] {_name} ({_description})");
+        }
+        else
+        {
+            Console.WriteLine($"Eternal: [ ] {_name} ({_description})");
+        }
     }
 }
