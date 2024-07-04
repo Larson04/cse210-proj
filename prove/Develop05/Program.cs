@@ -72,6 +72,7 @@ class Program
                 {
                     goal.Display();
                 }
+                Console.WriteLine(score);
             }
             else if (userChoice == "5")
             { // update

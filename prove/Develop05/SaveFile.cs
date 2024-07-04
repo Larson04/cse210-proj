@@ -17,7 +17,7 @@ class SaveFile
             {
                 string line = goal.ListSave();
                 // string line = goal._name + '|' +  goal._description + '|' + goal._isCompleted + '|' + goal._points;
-                outputFile.WriteLine($"{line}");
+                outputFile.WriteLine(line);
 
             }
         }
