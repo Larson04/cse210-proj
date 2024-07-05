@@ -6,34 +6,11 @@ class Simple : Goal
     }
 
 
-    public override void Update()
+    public override int Update()
     {
-        Console.WriteLine("Please enter the name of the goal you would like to update: ");
-        string name = Console.ReadLine();
-        Console.WriteLine("Have you completed this goal? (Yes or No)");
-        string completed = Console.ReadLine();
-        foreach (Goal goal in _goalList)
-        {
-            if (goal._name == name)
-            {
-                if (completed == "Yes")
-                {
-                    _isCompleted = true;
-                    Console.WriteLine($"You have earned {_points} points!");
-                    
-                    // _score += _points;
-
-                    
-
-                }
-                else
-                {
-                    Console.WriteLine("You have not earned any points, please try again next time.");
-                    _isCompleted = false;
-                    
-                }
-            }
-        }
+        this._isCompleted = true;
+        Console.WriteLine($"You have earned {this._points} points!");  
+        return this._points;   
     }
 
     public override string ListSave()
@@ -46,11 +23,11 @@ class Simple : Goal
     {
         if (_isCompleted == true)
         {
-            Console.WriteLine($"Eternal: [X] {_name} ({_description})");
+            Console.WriteLine($"Simple: [X] {_name} ({_description})");
         }
         else
         {
-            Console.WriteLine($"Eternal: [ ] {_name} ({_description})");
+            Console.WriteLine($"Simple: [ ] {_name} ({_description})");
         }
     }
 }

@@ -72,37 +72,60 @@ class Program
                 {
                     goal.Display();
                 }
-                Console.WriteLine(score);
+                Console.WriteLine($"Score:{score}");
             }
             else if (userChoice == "5")
             { // update
-                Console.Write("What is the type of the goal you would like to update: ");
-                string type = Console.ReadLine();
-                if (type == "eternal")
+                // Console.Write("What is the type of the goal you would like to update: ");
+                // string type = Console.ReadLine();
+                Console.WriteLine("Please enter the name of the goal you would like to update: ");
+                string name = Console.ReadLine();
+                Console.WriteLine("Have you completed this goal? (Yes or No)");
+                string completed = Console.ReadLine();
+                foreach (Goal goal in Goal._goalList)
                 {
-                    Eternal eternal =new Eternal("", "", 0, false, "", new List<string> { });
-                    eternal.Update();
-                    string eternalGoals = eternal.ListSave();
-                    score += eternal._points;
+                    if (goal._name == name)
+                    {
+                        if (completed.ToLower() == "yes")
+                        {
+                            
+                            // goal.Update();  
+                            score += goal.Update();
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("You have not earned any points, please try again next time.");
+                            goal._isCompleted = false;
+                            
+                        }
+                    }
                 }
-                else if (type == "simple")
-                {
-                    Simple simple = new Simple("", "", 0, false);
-                    simple.Update();
-                    string simpleGoals = simple.ListSave();
-                    score += simple._points;
-                }
-                else if (type == "check")
-                {
-                    Check check = new Check("", "", 0, false, 0, 0, 0);
-                    check.Update();
-                    string checkGoals = check.ListSave();
-                    score += check._points;
-                }
+                // if (type == "eternal")
+                // {
+                //     Eternal eternal =new Eternal("", "", 0, false, "", new List<string> { });
+                //     eternal.Update();
+                //     string eternalGoals = eternal.ListSave();
+                //     score += eternal._points;
+                // }
+                // else if (type == "simple")
+                // {
+                //     Simple simple = new Simple("", "", 0, false);
+                //     simple.Update();
+                //     string simpleGoals = simple.ListSave();
+                //     score += simple._points;
+                // }
+                // else if (type == "check")
+                // {
+                //     Check check = new Check("", "", 0, false, 0, 0, 0);
+                //     check.Update();
+                //     string checkGoals = check.ListSave();
+                //     score += check._points;
+                // }
             }
             else if (userChoice == "6")
             { // save
-                
+                SaveFile.Save(Goal._goalList);
             }   
             else if (userChoice == "7")
             { // load

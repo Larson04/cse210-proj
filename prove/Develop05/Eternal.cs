@@ -9,50 +9,30 @@ class Eternal : Goal
     }
     
 
-    public override void Update()
+    public override int Update()
     {
-        Console.WriteLine("Please enter the name of the goal you would like to update: ");
-        string name = Console.ReadLine();
-        Console.WriteLine("Have you completed this goal? (Yes or No)");
-        string completed = Console.ReadLine();
+       
+        
+        DateTime dateTime = DateTime.Now;
+        _date = dateTime.ToString("MM/dd/yyyy");
 
-        foreach (Goal goal in _goalList)
+        foreach (string date in _dateList)
         {
-            if (goal._name == name)
+            if (date == _date)
             {
-                if (completed == "Yes")
-                {
-                    foreach (string date in _dateList)
-                    {
-                        if (date == _date)
-                        {
-                            if (_isCompleted == true)
-                            {
-                                Console.WriteLine("You have already completed this goal today!");
-                                
-                            }
-                        }
-                        else
-                        {
-                            _isCompleted = true;
-                            Console.WriteLine($"You have earned {_points} points!");
-                            DateTime dateTime = DateTime.Now;
-                            _date = dateTime.ToString("MM/dd/yyyy");
-                            _dateList.Add(_date);
-                            Console.WriteLine($"You have completed this goal {_dateList.Count} times!");
-                            
-
-                        }
-                    }                    
-                }
-                else
-                {
-                    Console.WriteLine("You have not earned any points, please try again next time.");
-                    _isCompleted = false;
-                
-                }
+                Console.WriteLine("You have already completed this goal today!");
+                return 0;
             }
-        }
+            else
+            {
+                _isCompleted = true;
+                Console.WriteLine($"You have earned {_points} points!");
+            }
+        }                    
+        
+        _dateList.Add(_date);
+        Console.WriteLine($"You have completed this goal {_dateList.Count} times!");
+        return this._points;
     }
 
     public override string ListSave()

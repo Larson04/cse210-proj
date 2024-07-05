@@ -7,7 +7,7 @@ class SaveFile
 
     }
 
-    public static void Save(List<string> _goalList)
+    public static void Save(List<Goal> _goalList)
     {
         Console.WriteLine("What is the filename?");
         string filename = Console.ReadLine();
@@ -33,7 +33,7 @@ class SaveFile
         {
             string[] parts = line.Split("|");
 
-            if (parts[0] == "Eternal:")
+            if (parts[0] == "Eternal: ")
             {
                 string _name = parts[1];
                 string _description = parts[2];
@@ -45,7 +45,7 @@ class SaveFile
                 Eternal eternal = new Eternal(_name, _description, _points, _isCompleted, _date, _dateList);
                 Goal._goalList.Add(eternal);
             }
-            else if (parts[0] == "Simple:")
+            else if (parts[0] == "Simple: ")
             {
                 string _name = parts[1];
                 string _description = parts[2];
@@ -54,7 +54,7 @@ class SaveFile
                 Simple simple = new Simple(_name, _description, _points, _isCompleted);
                 Goal._goalList.Add(simple);
             }
-            else if (parts[0] == "Check:")
+            else if (parts[0] == "Check: ")
             {
                 string _name = parts[1];
                 string _description = parts[2];

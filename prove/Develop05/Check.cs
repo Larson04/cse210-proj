@@ -10,50 +10,29 @@ class Check : Goal
         _count = count;
     }
 
-    public override void Update()
-    {
-        Console.WriteLine("Please enter the name of the goal you would like to update: ");
-        string name = Console.ReadLine();
-        Console.WriteLine("Have you completed this goal? (Yes or No)");
-        string completed = Console.ReadLine();
-
-        foreach (Goal goal in _goalList)
-        {
-            if (goal._name == name)
-            {
-                if (completed == "Yes")
-                {
-                    if (_count == _checkCount)
-                    {
-                        if (_isCompleted == true)
-                        {
-                            _bonus = _points * 2;
-                            Console.WriteLine("You have completed this goal! Here is a bonus of " + _bonus + " points! ");
-
-                            
-                        }
-                    }
-                    else
-                    {
-                        _isCompleted = true;
-                        Console.WriteLine($"You have earned {_points} points!");
-
-                        _count += 1;
-
-                        
-                        Console.WriteLine($"You have completed this goal {_count}/{_checkCount} times!");
-                        // _score += _points;
-
-                    }
-                }                    
-            }
-            else
-            {
-                Console.WriteLine("You have not earned any points, please try again next time.");
-                _isCompleted = false;
-            
-            }
+    public override int Update()
+    {      
+                
+        _count += 1;
+        if (_count == _checkCount)
+        {  
+            Console.WriteLine("You have completed this goal! Here is a bonus of " + _bonus + " points! ");
+                
+            _isCompleted = true;
+            return this._points + _bonus;
         }
+        else
+        {
+            Console.WriteLine($"You have earned {_points} points!");
+
+
+            
+            Console.WriteLine($"You have completed this goal {_count}/{_checkCount} times!");
+
+            return this._points;
+        }     
+
+           
     }   
 
     public override string ListSave()
@@ -66,11 +45,11 @@ class Check : Goal
     {
         if (_isCompleted == true)
         {
-            Console.WriteLine($"Eternal: [X] {_name} ({_description})");
+            Console.WriteLine($"Check: [X] {_name} ({_description})");
         }
         else
         {
-            Console.WriteLine($"Eternal: [ ] {_name} ({_description})");
+            Console.WriteLine($"Check: [ ] {_name} ({_description})");
         }
     }
 }

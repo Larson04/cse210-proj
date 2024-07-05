@@ -3,7 +3,6 @@ abstract class Goal
     public string _name;
     public string _description;
     public int _points;
-    
     public bool _isCompleted;
     
     public static List<Goal> _goalList = new List<Goal> { };
@@ -19,7 +18,7 @@ abstract class Goal
 
     public abstract void Display();
 
-    public abstract void Update();
+    public abstract int Update();
 
     public abstract string ListSave();
 }
