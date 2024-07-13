@@ -13,7 +13,8 @@ class Customer
 
     public bool DomesticOrInternational()
     {
-        return _address.DomesticOrInternational();
+        _isDomestic = _address.DomesticOrInternational();
+        return _isDomestic;
     }
     
     public void DisplayAddress()

@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 class Order
 {
     private Customer _customer;
-    private List<Product> _order;
+    private List<Product> _order = new List<Product>();
     private double _orderTotal;
 
     public Order(string customerName, string streetAddress, string city, string state, string country,  double orderTotal)
