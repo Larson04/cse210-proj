@@ -25,7 +25,7 @@ class Program
 
         order2.AddProduct(new Product("Plain work robes", "WkR3425", 30.45, 3, 91.35));
         order2.AddProduct(new Product("Pointed Hat", "PH1235", 15.50, 1, 15.50));
-        order2.AddProduct(new Product("Dragon HIde Gloves", "DHG1236", 50.65, 1, 50.65));
+        order2.AddProduct(new Product("Dragon Hide Gloves", "DHG1236", 50.65, 1, 50.65));
         order2.AddProduct(new Product("Name Tag", "TG1234", 5.74, 3, 17.22));
 
         orders.Add(order2);
@@ -34,8 +34,12 @@ class Program
         foreach (Order order in orders)
         {
             order.PrintPackingLabel();
+            Console.WriteLine();
             order.PrintShippingLabel();
+            Console.WriteLine();
             order.OrderTotal();
+            Console.Write(" \n \n");
+
         }
     }
 }

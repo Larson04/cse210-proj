@@ -17,7 +17,7 @@ class Order
     }
 
     
-    public double OrderTotal()
+    public void OrderTotal()
     {
         foreach (Product product in _order)
         {
@@ -32,7 +32,7 @@ class Order
             _orderTotal += 35;
         }
 
-        return _orderTotal;
+        Console.Write("{0:0.00}", _orderTotal);
     }
 
 
