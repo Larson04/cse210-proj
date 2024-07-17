@@ -1,7 +1,7 @@
 class Activity
 {
-    private string _date;
-    private int _duration;
+    protected string _date;
+    protected int _duration;
 
     public Activity(string date, int duration)
     {
@@ -9,19 +9,19 @@ class Activity
         _duration = duration;
     }
 
-    public virtual void CalcDistance()
+    public virtual double CalcDistance()
     {
-        return;
+        return 0.0;
     }
 
-    public virtual void CalcSpeed()
+    public virtual double CalcSpeed()
     {
-        return;
+        return 0.0;
     }
 
-    public virtual  void CalcPace()
+    public virtual double CalcPace()
     {
-        return;
+        return 0.0;
     }
 
     public virtual void GetSummary()
